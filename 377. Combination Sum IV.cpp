@@ -34,7 +34,7 @@ public:
         dp[0]=1;
         for(int i=1;i<=target;i++)
         {
-            for(int j=0;j<nums.size() && nums[j]<=i;j++)
+            for(int j=0;j<len && nums[j]<=i;j++)
             {
                 dp[i]+=dp[i-nums[j]];
             }
