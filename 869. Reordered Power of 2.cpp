@@ -38,7 +38,6 @@ public:
     bool reorderedPowerOf2(int N) {
         vector<int> digits;
         while(N) digits.emplace_back(N%10),N/=10;
-        int n=digits.size();
         sort(digits.begin(),digits.end());
         do{
             if(digits[0]==0) continue;
