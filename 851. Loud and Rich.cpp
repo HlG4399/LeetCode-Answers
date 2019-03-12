@@ -51,7 +51,7 @@ public:
     }
     
     int DFS(int i,unordered_map<int,vector<int>>& hash,vector<int>& quiet,vector<int>& results){
-        if(results[i]>0) return results[i];
+        if(results[i]>=0) return results[i];
         results[i]=i;
         for(auto j:hash[i]){
             if(quiet[results[i]]>quiet[DFS(j,hash,quiet,results)]) results[i]=results[j];
