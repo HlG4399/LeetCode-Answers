@@ -37,7 +37,7 @@ public:
         vector<int> votes(n,0);
         for(int i=0,vote_leading=-1;i<n;++i){
             ++votes[persons[i]];
-            if(vote_leading<=votes[persons[i]]){
+            if(vote_leading<=(++votes[persons[i]])){
                 vote_leading=votes[persons[i]];
                 querys[times[i]]=persons[i];
             }
