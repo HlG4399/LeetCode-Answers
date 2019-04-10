@@ -25,10 +25,10 @@ public:
         int n=A.size();
         vector<int> prefixSum(n+1,0);
         for(int i=1;i<n+1;++i) prefixSum[i]=prefixSum[i-1]+A[i-1];
-        unordered_map<int,int> hash;
-        for(int i=0;i<n+1;++i) ++hash[(prefixSum[i]%K+K)%K];
+        vector<int> counts(K,0);
+        for(int i=0;i<n+1;++i) ++counts[(prefixSum[i]%K+K)%K];
         int result=0;
-        for(auto it=hash.begin();it!=hash.end();++it) result+=(it->second)*(it->second-1)/2;
+        for(auto count:counts) result+=(count)*(count-1)/2;
         return result;
     }
 };
